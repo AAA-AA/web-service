@@ -14,9 +14,17 @@ var (
 
 // Config struct of conf.
 type Config struct {
-	User *User
+	User  *User
+	Mysql *MySQL
 }
 
+// MySQL config.
+type MySQL struct {
+	Addr   string // for trace
+	DSN    string // data source name
+	Active int    // pool
+	Idle   int    // pool
+}
 type User struct {
 	username string
 	passwd   string

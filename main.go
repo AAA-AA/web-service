@@ -2,9 +2,11 @@ package main
 
 import (
 	"flag"
-	"log"
 
 	"web-service/conf"
+	"web-service/http"
+
+	"github.com/ngaut/log"
 )
 
 func main() {
@@ -12,5 +14,6 @@ func main() {
 	if err := conf.Init(); err != nil {
 		panic(err)
 	}
-	log.Println("conf has been inited successfully!")
+	log.Info("conf has been inited successfully!")
+	http.Init(conf.Conf)
 }
