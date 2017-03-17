@@ -12,6 +12,7 @@ import (
 func main() {
 	flag.Parse()
 	if err := conf.Init(); err != nil {
+		log.Error("init error ")
 		panic(err)
 	}
 	log.Info("conf has been inited successfully!")
